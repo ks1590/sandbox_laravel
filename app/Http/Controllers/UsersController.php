@@ -9,6 +9,7 @@ use App\Exports\UsersExport;
 class UsersController extends Controller
 {
     public function export(){
-	    return Excel::download(new UsersExport, 'users.xlsx'); 
+	    return Excel::download(new UsersExport, 'users.csv'); 
+        // return Excel::download(new UsersExport, 'users.html'); 
     }
 }
