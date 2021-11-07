@@ -21,6 +21,12 @@ class UsersController extends Controller
     }
 
     public function store(Request $request){
+        // $request->validate([
+        //     'name' => ['required'],
+        //     'email' =>['required','unique:users'],
+        //     'password' =>['required'],
+        // ]);
+
 		$file = $request->file('file');
 		Excel::import(new UsersImport, $file);
     }
