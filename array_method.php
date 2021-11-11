@@ -30,7 +30,9 @@ $members = array (
 
 $merge_members = call_user_func_array("array_merge", $members);
 // $merge_members = call_user_func_array("array_merge", $merge_members);
-// var_dump($merge_members[0]);
+$merge_members = array_search('Ben',$members);
+
+var_dump($merge_members['name']);
 
 // $arr = array(
 //     array(1, 2, 3),
