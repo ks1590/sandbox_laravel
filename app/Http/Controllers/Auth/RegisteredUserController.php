@@ -10,8 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
-use Mail;
-use App\Mail\WelcomeMail;
+use App\Jobs\SendWelcomeMail;
 
 class RegisteredUserController extends Controller
 {
@@ -47,7 +46,7 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        Mail::to($user->email)->send(new WelcomeMail());
+        SendWelcomeMail::dispatch($user)->delay(now()->addSeconds(1));;
 
         event(new Registered($user));
 
