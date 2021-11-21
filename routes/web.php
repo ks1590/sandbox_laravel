@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ Route::get('/', function () {
 
 // Route::get('users',[UsersController::class,'export']);
 Route::resource('users',UsersController::class);
+Route::resource('item',ItemController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
