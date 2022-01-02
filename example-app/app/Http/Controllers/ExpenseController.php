@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreExpenseRequest;
 use App\Http\Requests\UpdateExpenseRequest;
 use App\Models\Expense;
+use Illuminate\Http\Request;
 
 class ExpenseController extends Controller
 {
@@ -15,7 +16,7 @@ class ExpenseController extends Controller
      */
     public function index()
     {
-        //
+        return view('expense.index');
     }
 
     /**
