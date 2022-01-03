@@ -20,5 +20,19 @@ class ExpenseSeeder extends Seeder
             'category' => '食費',
             'amount' => 1000,
         ]);
+
+        DB::table('expenses')->insert([
+            'date' => '20220102',
+            'payment' => 'クレジットカード',
+            'category' => 'ファッション',
+            'amount' => 15000,
+        ]);
+
+        DB::table('expenses')->insert([
+            'date' => '20220103',
+            'payment' => '現金',
+            'category' => '交通費',
+            'amount' => 800,
+        ]);
     }
 }
